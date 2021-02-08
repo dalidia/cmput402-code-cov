@@ -32,8 +32,6 @@ jobs:
     - name: Run Codecov report
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-      run:
-        name: code-cov
-        command: >-
-          ./gradlew jacocoTestReport;
-          bash <(curl -s https://codecov.io/bash)
+      command: >-
+        ./gradlew jacocoTestReport;
+        bash <(curl -s https://codecov.io/bash)
